@@ -1,0 +1,59 @@
+Minimize the Maximum of Two Arrays
+#include <iostream>
+#include<vector>
+#include <climits>
+using namespace std;
+int main() {
+    
+
+   int divisor1=12,divisor2=3; int uniqueCnt1=2; int uniqueCnt2=10;
+        vector<int>arr1;
+        vector<int>arr2;
+        int i=1,j=1;
+        while(uniqueCnt1!=0 || uniqueCnt2!=0)
+        {
+            if((i%divisor1)!=0 && uniqueCnt1 > 0)
+            {
+                arr1.push_back(i);
+                uniqueCnt1--;
+            }
+            else if((i%divisor2)!=0 && uniqueCnt2 > 0)
+            {
+                arr2.push_back(i);
+                uniqueCnt2--;
+            }
+            i++;
+            j++;
+        }
+        
+        for(auto i:arr1)
+        {
+            cout<<i;
+        }
+        cout<<endl;
+         for(auto i:arr2)
+        {
+            cout<<i;
+        }
+        int max1=INT_MIN,max2=INT_MIN;
+        for(auto i:arr1)
+        {
+            if(i>max1)
+            {
+                max1=i;
+            }
+        }
+         for(auto i:arr2)
+        {
+            if(i>max2)
+            {
+                max2=i;
+            }
+        }
+        cout<<endl;
+        if(max1>max2)
+        cout<<max1;
+        else
+        cout<<max2;
+    }
+
